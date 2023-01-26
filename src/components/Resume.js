@@ -15,17 +15,20 @@ export default class Resume extends Component {
             {
               resumeData.education && resumeData.education.map((item, index) => {
                 return (
-                  <div className="row item" key={index}>
-                    <div className="twelve columns">
-                      <h3>{item.UniversityName}</h3>
-                      <p className="info">
-                        {item.specialization}
-                        <span>&bull;</span> <em className="date">{item.MonthOfPassing} {item.YearOfPassing}</em></p>
-                      <p>
-                        {item.Achievements}
-                      </p>
+                  <React.Fragment key={item.Id}>
+                    <div className="row item">
+                      <div className="twelve columns">
+                        <h3>{item.UniversityName}</h3>
+                        <p className="info">
+                          {item.specialization}
+                          <span>&bull;</span> <em className="date">{item.MonthOfPassing} {item.YearOfPassing}</em></p>
+                        <p>
+                          {item.Achievements}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </React.Fragment>
+
                 )
               })
             }
@@ -40,7 +43,7 @@ export default class Resume extends Component {
             {
               resumeData.work && resumeData.work.map((item) => {
                 return (
-                  <div className="row item">
+                  <div className="row item" key={item.Id}>
                     <div className="twelve columns">
                       <h3>{item.CompanyName}</h3>
                       <p className="info">
@@ -49,6 +52,12 @@ export default class Resume extends Component {
                       <p>
                         {item.Achievements}
                       </p>
+                      {item.Technologies != '' && item.Technologies != null &&
+                        <p>
+
+                          Technologies : {item.Technologies}
+                        </p>}
+
                     </div>
 
                   </div>

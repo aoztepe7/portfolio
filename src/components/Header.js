@@ -13,23 +13,23 @@ export default class Header extends Component {
               <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
               <li><a className="smoothscroll" href="#about">About</a></li>
               <li><a className="smoothscroll" href="#resume">Resume</a></li>
-              <li><a className="smoothscroll" href="#portfolio">Works</a></li>
+              {/* <li><a className="smoothscroll" href="#portfolio">Works</a></li>
               <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
-              <li><a className="smoothscroll" href="#contact">Contact</a></li>
+              <li><a className="smoothscroll" href="#contact">Contact</a></li> */}
             </ul>
           </nav>
 
           <div className="row banner">
             <div className="banner-text">
               <h1 className="responsive-headline">Ali OZTEPE</h1>
-              <h3 style={{ color: '#fff', fontFamily: 'sans-serif ' }}> Front end - Back end Developer
+              <h3 style={{ color: '#fff', fontFamily: 'sans-serif ' }}> Full-Stack Web Developer
               </h3>
               <hr />
               <ul className="social">
                 {
                   resumeData.socialLinks && resumeData.socialLinks.map(item => {
                     return (
-                      <li key={item.name}>
+                      <li key={item.id}>
                         <a href={item.url} target="_blank"><i className={item.className}></i></a>
                       </li>
                     )
